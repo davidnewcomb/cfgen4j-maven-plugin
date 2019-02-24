@@ -1,15 +1,25 @@
-# Maven plugin fo cfgen4j
+# Maven plugin for cfgen4j
+
+Not installed in Maven yet. (Coming soon!)
+So if you want to use it in your builds you'll have to install it locally, but that's easy:
+
+    for proj in cfgen4j cfgen4j-maven-plugin
+    do
+        (git clone https://github.com/davidnewcomb/$proj.git ; cd $proj ; mvn install)
+    done
+Then just include it in your `pom.xml` as normal.
 
 ## Usage
 
     <project>
+    <properties><cfgen4j.version>0.0.1</cfgen4j.version></properties>
     <build>
     <plugins>
 
     <plugin>
         <groupId>uk.co.bigsoft</groupId>
         <artifactId>cfgen4j-maven-plugin</artifactId>
-        <version>0.0.1-SNAPSHOT</version>
+        <version>${cfgen4j.version}</version>
         <executions>
             <execution>
                 <id>cfgen4j-cr</id>
